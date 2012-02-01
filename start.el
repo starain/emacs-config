@@ -68,5 +68,25 @@
 (setq swbuff-separator "|")
 (setq swbuff-window-min-text-height 1)
 
+;; Scroll screen directly, no matter where the pointer is.
+(defun go-up ()
+  (interactive)
+  (and (not (pos-visible-in-window-p (point-min)))
+       (scroll-down 1))
+  (next-line -1))
+
+(defun go-down ()
+  (interactive)
+  (let ((old-point (point)))
+    (scroll-down -1)
+    (and (pos-visible-in-window-p old-point)
+         (next-line 1))))
+
 (global-set-key [f2] 'goto-line)
 (global-set-key [f4] 'grep)
+(global-set-key [up] 'go-up)
+(global-set-key [down] 'go-down)
+
+;; Start with a nice clean environment:
+(garbage-collect)
+
