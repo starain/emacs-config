@@ -43,6 +43,20 @@
 ;; turn on font-lock mode, highlighted defined or reserved keywords.
 (global-font-lock-mode t)
 
+;; Highlighted tab and trailing spaces.
+(custom-set-faces
+  '(my-tab-face ((((class color)) (:background "white"))) t)
+  '(my-trailing-space-face ((((class color)) (:background "red"))) t))
+
+(add-hook 'font-lock-mode-hook
+  (function
+    (lambda ()
+      (setq font-lock-keywords
+        (append font-lock-keywords
+          '(("\t+" (0 'my-tab-face t))
+           ("[ \t]+$" (0 'my-trailing-space-face t))))))))
+
+;; Setup color theme.
 (load-file (concat yi-thirdparty-dir "color-theme.el"))
 (require 'color-theme)
 (color-theme-dark-laptop)
