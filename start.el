@@ -106,11 +106,17 @@
 (require 'multi-term)
 (setq multi-term-program "/bin/bash")
 
+;; Very handy mode
+(require 'ido)
+(ido-mode)
+
 (global-set-key [f2] 'goto-line)
 (global-set-key [f4] 'grep)
 (global-set-key [up] 'go-up)
 (global-set-key [down] 'go-down)
 (global-set-key (kbd "C-t") 'multi-term)
+(global-set-key (kbd "C-c s") 'search-forward-regexp)
+(global-set-key (kbd "C-c r") 'search-backward-regexp)
 
 ;; Start with a nice clean environment:
 (garbage-collect)
