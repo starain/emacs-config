@@ -96,10 +96,15 @@
     (and (pos-visible-in-window-p old-point)
          (next-line 1))))
 
+(load-file (concat yi-thirdparty-dir "multi-term.el"))
+(require 'multi-term)
+(setq multi-term-program "/bin/bash")
+
 (global-set-key [f2] 'goto-line)
 (global-set-key [f4] 'grep)
 (global-set-key [up] 'go-up)
 (global-set-key [down] 'go-down)
+(global-set-key (kbd "C-t") 'multi-term)
 
 ;; Start with a nice clean environment:
 (garbage-collect)
