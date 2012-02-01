@@ -1,5 +1,5 @@
 ;;; .emacs -*-Emacs-Lisp-*-         created:  Tue Jan 31 21:56:41 PST 2012
-; $Id: start.el,v 0.01 2012/01/31 21:56:41 starain.zhang Exp $
+; $Id: start.el,v 0.01 2012/02/01 00:27:41 starain.zhang Exp $
 
 ;; Set up base dir
 (setq yi-current-dir
@@ -44,17 +44,23 @@
 (global-font-lock-mode t)
 
 ;; Highlighted tab and trailing spaces.
-(custom-set-faces
-  '(my-tab-face ((((class color)) (:background "white"))) t)
-  '(my-trailing-space-face ((((class color)) (:background "red"))) t))
+;; (custom-set-faces
+;;   '(my-tab-face ((((class color)) (:background "white"))) t)
+;;   '(my-trailing-space-face ((((class color)) (:background "red"))) t))
 
-(add-hook 'font-lock-mode-hook
-  (function
-    (lambda ()
-      (setq font-lock-keywords
-        (append font-lock-keywords
-          '(("\t+" (0 'my-tab-face t))
-           ("[ \t]+$" (0 'my-trailing-space-face t))))))))
+;; (add-hook 'font-lock-mode-hook
+;;   (function
+;;     (lambda ()
+;;       (setq font-lock-keywords
+;;         (append font-lock-keywords
+;;           '(("\t+" (0 'my-tab-face t))
+;;            ("[ \t]+$" (0 'my-trailing-space-face t))))))))
+
+;; TODO: Highlighted is extreamly annonying in term mode. Should figure
+;; out how to turn it off.
+;; (add-hook 'term-mode-hook
+;;   (lambda ()
+;;     (font-lock-mode 0)))
 
 ;; Setup color theme.
 (load-file (concat yi-thirdparty-dir "color-theme.el"))
