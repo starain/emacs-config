@@ -3,11 +3,11 @@
 
 ;; Set up base dir
 (setq yi-current-dir
-	  (file-name-directory (or load-file-name buffer-file-name)))
+      (file-name-directory (or load-file-name buffer-file-name)))
 
 (setq yi-thirdparty-dir
-	  (concat yi-current-dir
-			  "/thirdparty/"))
+      (concat yi-current-dir
+              "/thirdparty/"))
 
 ;; Set up grep to do recursive search by default
 (setq grep-command "grep -nH -R -e ")
