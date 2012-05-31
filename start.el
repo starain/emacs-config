@@ -43,6 +43,14 @@
 ;; turn on font-lock mode, highlighted defined or reserved keywords.
 (global-font-lock-mode t)
 
+;; display time in the minibar
+(display-time-mode 1)
+;; display time and date
+(setq display-time-day-and-date t)
+
+;; Default column width
+(setq default-fill-column 80)
+
 ;; Highlighted tab and trailing spaces.
 ;; (custom-set-faces
 ;;   '(my-tab-face ((((class color)) (:background "white"))) t)
@@ -120,4 +128,3 @@
 
 ;; Start with a nice clean environment:
 (garbage-collect)
-
