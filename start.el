@@ -126,5 +126,82 @@
 (global-set-key (kbd "C-c s") 'search-forward-regexp)
 (global-set-key (kbd "C-c r") 'search-backward-regexp)
 
+(defun zhangyi-base-dir(base-dir-substring)
+  (substring (buffer-file-name) 0 (+ (string-match base-dir-substring buffer-file-name) (length base-dir-substring)))
+)
+
+(defun zhangyi-target-name(base-dir)
+  (substring buffer-file-name (+ 1 (length base-dir)) (string-match "\\.[^\\./]*$" buffer-file-name))
+)
+
+(defun zhangyi-test-target-name(base-dir test-suffix)
+  (let (target-name test-suffix-pattern)
+    (setq target-name (zhangyi-target-name base-dir))
+    (setq test-suffix-pattern (concat test-suffix "$"))
+    (if (string-match test-suffix-pattern target-name)
+        (substring target-name 0 (string-match test-suffix-pattern target-name))
+        target-name)
+  )
+)
+
+(defun zhangyi-compile(compile-command base-dir-substring)
+  (let (current-dir base-dir target-name)
+    (setq current-dir default-directory)
+    (setq base-dir (zhangyi-base-dir base-dir-substring))
+    (setq target-name (zhangyi-target-name base-dir))
+    (cd base-dir)
+    (compile (concat compile-command " " target-name))
+    (cd current-dir)
+  )
+)
+
+(defun zhangyi-test(test-command base-dir-substring test-suffix)
+  (let (current-dir base-dir target-name)
+    (setq current-dir default-directory)
+    (setq base-dir (zhangyi-base-dir base-dir-substring))
+    (setq target-name (zhangyi-test-target-name base-dir test-suffix))
+    (cd base-dir)
+    (compile (concat test-command " " target-name test-suffix))
+    (cd current-dir)
+  )
+)
+
+(defun zhangyi-default-compile()
+  (interactive)
+  (zhangyi-compile "make" "project")
+)
+
+(global-set-key (kbd "C-c c") 'zhangyi-default-compile)
+
+(defun zhangyi-default-test()
+  (interactive)
+  (zhangyi-test "make" "project" "_test")
+)
+
+(global-set-key (kbd "C-c t") 'zhangyi-default-test)
+
+;; Open header file. Actually it can open any filename between quotes.
+;; TODO(zhangyi): Need to handle file-not-found
+(defun zhangyi-open-header-file ()
+  (interactive)
+  ;; Save the original pointer
+  (setq original-point (point))
+  ;; Get left boundary after quote
+  (skip-chars-backward "^\"")
+  (setq p1 (point))
+  ;; Get right boundary before quote
+  (skip-chars-forward "^\"")
+  (setq p2 (point))
+  ;; Go back to cursor
+  (goto-char original-point)
+  ;; Grab & expand filename
+  (setq filename (concat (zhangyi-base-dir) "/" (buffer-substring-no-properties p1 p2)))
+  ;; Open the file
+  (switch-to-buffer (find-file-noselect filename nil))
+  (message filename)
+)
+
+(global-set-key [f12] 'zhangyi-open-header-file)
+
 ;; Start with a nice clean environment:
 (garbage-collect)
