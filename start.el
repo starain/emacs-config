@@ -118,8 +118,8 @@
 (require 'ido)
 (ido-mode)
 
-(global-set-key [f2] 'goto-line)
-(global-set-key [f4] 'grep)
+(global-set-key (kbd "C-c g") 'goto-line)
+(global-set-key (kbd "C-c f") 'grep)
 (global-set-key [up] 'go-up)
 (global-set-key [down] 'go-down)
 (global-set-key (kbd "C-t") 'multi-term)
@@ -166,6 +166,31 @@
   )
 )
 
+(defun zhangyi-target-dir-name(base-dir)
+  (substring buffer-file-name (+ 1 (length base-dir)) (string-match "/[^/]*$" buffer-file-name))
+)
+
+(defun zhangyi-test-dir(test-command base-dir-substring test-suffix)
+  (let (current-dir base-dir target-name)
+    (setq current-dir default-directory)
+    (setq base-dir (zhangyi-base-dir base-dir-substring))
+    (setq target-name (concat (zhangyi-target-dir-name base-dir) "/" test-suffix))
+    (cd base-dir)
+    (compile (concat test-command " " target-name))
+    (cd current-dir)
+  )
+)
+
+(defun zhangyi-test-project(test-command base-dir-substring project-dir test-suffix)
+  (let (current-dir base-dir)
+    (setq current-dir default-directory)
+    (setq base-dir (zhangyi-base-dir base-dir-substring))
+    (cd base-dir)
+    (compile (concat test-command " " project-dir "/" test-suffix))
+    (cd current-dir)
+  )
+)
+
 (defun zhangyi-default-compile()
   (interactive)
   (zhangyi-compile "make" "project")
@@ -179,6 +204,20 @@
 )
 
 (global-set-key (kbd "C-c t") 'zhangyi-default-test)
+
+(defun zhangyi-default-test-dir()
+  (interactive)
+  (zhangyi-test-dir "make" "project" "")
+)
+
+(global-set-key (kbd "C-c C-t d") 'zhangyi-default-test-dir)
+
+(defun zhangyi-default-test-project()
+  (interactive)
+  (zhangyi-test-project "make" "project" "")
+)
+
+(global-set-key (kbd "C-c C-t p") 'zhangyi-default-test-project)
 
 ;; Open header file. Actually it can open any filename between quotes.
 ;; TODO(zhangyi): Need to handle file-not-found
@@ -201,7 +240,7 @@
   (message filename)
 )
 
-(global-set-key [f12] 'zhangyi-open-header-file)
+(global-set-key (kbd "C-c o") 'zhangyi-open-header-file)
 
 ;; Start with a nice clean environment:
 (garbage-collect)
