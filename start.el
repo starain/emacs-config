@@ -51,6 +51,9 @@
 ;; Default column width
 (setq default-fill-column 80)
 
+;; golang mode
+(load-file (concat yi-thirdparty-dir "go-mode.el"))
+
 ;; Highlighted tab and trailing spaces.
 ;; (custom-set-faces
 ;;   '(my-tab-face ((((class color)) (:background "white"))) t)
