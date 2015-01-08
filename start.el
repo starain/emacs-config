@@ -76,7 +76,7 @@
 ;; Setup color theme.
 (load-file (concat yi-thirdparty-dir "color-theme.el"))
 (require 'color-theme)
-(color-theme-dark-laptop)
+;;(color-theme-dark-laptop)
 
 ;; Replace buffer mode by ibuffer
 (require 'ibuffer)
@@ -244,6 +244,11 @@
 )
 
 (global-set-key (kbd "C-c o") 'zhangyi-open-header-file)
+
+;; yasnippet
+(add-to-list 'load-path (concat yi-thirdparty-dir "yasnippet-0.8.0"))
+(require 'yasnippet)
+(yas-global-mode 1)
 
 ;; Start with a nice clean environment:
 (garbage-collect)
