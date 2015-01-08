@@ -73,10 +73,8 @@
 ;;   (lambda ()
 ;;     (font-lock-mode 0)))
 
-;; Setup color theme.
-(load-file (concat yi-thirdparty-dir "color-theme.el"))
-(require 'color-theme)
-;;(color-theme-dark-laptop)
+(add-to-list 'custom-theme-load-path (concat yi-thirdparty-dir "themes"))
+(load-theme 'zenburn t)
 
 ;; Replace buffer mode by ibuffer
 (require 'ibuffer)
@@ -272,6 +270,27 @@
 (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+
+;; ace-jump-mode
+(load-file (concat yi-thirdparty-dir "ace-jump-mode.el"))
+(autoload
+  'ace-jump-mode
+  "ace-jump-mode"
+  "Emacs quick move minor mode"
+  t)
+;; you can select the key you prefer to
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+;;
+;; enable a more powerful jump back function from ace jump mode
+;;
+(autoload
+  'ace-jump-mode-pop-mark
+  "ace-jump-mode"
+  "Ace jump back:-)"
+  t)
+(eval-after-load "ace-jump-mode"
+  '(ace-jump-mode-enable-mark-sync))
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
 ;; Start with a nice clean environment:
 (garbage-collect)
