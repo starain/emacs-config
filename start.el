@@ -246,9 +246,24 @@
 (global-set-key (kbd "C-c o") 'zhangyi-open-header-file)
 
 ;; yasnippet
-(add-to-list 'load-path (concat yi-thirdparty-dir "yasnippet-0.8.0"))
-(require 'yasnippet)
-(yas-global-mode 1)
+;(add-to-list 'load-path (concat yi-thirdparty-dir "yasnippet-0.9.0-beta"))
+;(require 'yasnippet)
+;(yas-global-mode t)
+;; Remove Yasnippet's default tab key binding
+;(define-key yas-minor-mode-map (kbd "<tab>") nil)
+;(define-key yas-minor-mode-map (kbd "TAB") nil)
+;; Set Yasnippet's key binding to shift+tab
+;(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
+
+(add-to-list 'load-path (concat yi-thirdparty-dir "auto-complete-1.3.1"))
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories (concat yi-thirdparty-dir "auto-complete-1.3.1/dict"))
+(ac-config-default)
+;;; set the trigger key so that it can work together with yasnippet on tab key,
+;;; if the word exists in yasnippet, pressing tab will cause yasnippet to
+;;; activate, otherwise, auto-complete will
+(ac-set-trigger-key "TAB")
+(ac-set-trigger-key "<tab>")
 
 ;; Start with a nice clean environment:
 (garbage-collect)
