@@ -9,6 +9,8 @@
       (concat yi-current-dir
               "/thirdparty/"))
 
+(add-to-list 'load-path yi-thirdparty-dir "go-mode.el")
+
 ;; Set up grep to do recursive search by default
 (setq grep-command "grep -nH -R -e ")
 
@@ -53,6 +55,8 @@
 
 ;; golang mode
 (load-file (concat yi-thirdparty-dir "go-mode.el"))
+(require 'go-mode-load)
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; Highlighted tab and trailing spaces.
 ;; (custom-set-faces
