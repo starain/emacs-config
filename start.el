@@ -76,7 +76,7 @@
 ;; Setup color theme.
 (load-file (concat yi-thirdparty-dir "color-theme.el"))
 (require 'color-theme)
-(color-theme-dark-laptop)
+;;(color-theme-dark-laptop)
 
 ;; Replace buffer mode by ibuffer
 (require 'ibuffer)
