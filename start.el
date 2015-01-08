@@ -265,5 +265,12 @@
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
 
+(add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el-1.3.0"))
+(require 'multiple-cursors)
+(global-set-key (kbd "C-c C-c") 'mc/edit-lines)
+(global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-a") 'mc/mark-all-like-this)
+
 ;; Start with a nice clean environment:
 (garbage-collect)
