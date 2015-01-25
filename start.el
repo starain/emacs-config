@@ -117,7 +117,7 @@
 
 (load-file (concat yi-thirdparty-dir "multi-term.el"))
 (require 'multi-term)
-(setq multi-term-program "/bin/bash")
+(setq multi-term-program "/bin/zsh")
 
 ;; Very handy mode
 (require 'ido)
