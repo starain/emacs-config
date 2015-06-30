@@ -25,10 +25,6 @@
 ;; Tab as 4 space
 (setq default-tab-width 4)
 
-;; Scroll page at the last 3 line of the page
-(setq scroll-margin 3
-      scroll-conservatively 10000)
-
 ;; High light the matched parentheses.
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
