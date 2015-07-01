@@ -29,6 +29,7 @@ M-y
 
 ### Switch buffer
 M-9
+
 M-0
 
 ## Multi-Term
@@ -45,7 +46,9 @@ C-c c
 ### Test
 
 Test current file: C-c t
+
 Test directory: C-c C-t d
+
 Test project: C-c C-t p
 
 ## Jump to file between quotes
@@ -57,12 +60,17 @@ C-c o
 All need to have highlighted region before performing.
 
 Edit lines: C-c l
+
 Mark next like this: C-c >
+
 Mark previous like this: C-c <
+
 Mark all like this: C-c a
+
 Exit multiple curses mode: C-g
 
 ## Ace jump mode
 
 C-c SPC
+
 C-x SPC - jump back to the privous mark before Ace jump (not working currently :()
