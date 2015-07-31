@@ -268,9 +268,9 @@
 )
 
 ;; yasnippet
-;(add-to-list 'load-path (concat yi-thirdparty-dir "yasnippet-0.9.0-beta"))
-;(require 'yasnippet)
-;(yas-global-mode t)
+(add-to-list 'load-path (concat yi-thirdparty-dir "yasnippet"))
+(require 'yasnippet)
+(yas-global-mode t)
 ;; Remove Yasnippet's default tab key binding
 ;(define-key yas-minor-mode-map (kbd "<tab>") nil)
 ;(define-key yas-minor-mode-map (kbd "TAB") nil)
