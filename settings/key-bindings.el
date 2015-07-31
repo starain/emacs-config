@@ -31,9 +31,9 @@
 (global-set-key (kbd "C-c o") 'zhangyi-open-header-file)
 
 ;; multi cursors
-(global-set-key (kbd "C-c @") 'mc/edit-lines)
-(global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c m") 'mc/edit-lines)
+(global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
+(global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c l") 'set-rectangular-region-anchor)
 
