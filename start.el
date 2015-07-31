@@ -9,6 +9,10 @@
       (concat yi-current-dir
               "/thirdparty/"))
 
+;; https://github.com/technomancy/better-defaults
+(load-file (concat yi-thirdparty-dir "better-defaults.el"))
+(require 'better-defaults)
+
 (add-to-list 'load-path yi-thirdparty-dir "go-mode.el")
 
 ;; Set up grep to do recursive search by default
@@ -76,9 +80,9 @@
 (add-to-list 'custom-theme-load-path (concat yi-thirdparty-dir "themes"))
 (load-theme 'zenburn t)
 
-;; Replace buffer mode by ibuffer
-(require 'ibuffer)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
+;; Replace buffer mode by ibuffer (included in better-defaults)
+; (require 'ibuffer)
+; (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Browse kill ring, bind to C-c k
 (load-file (concat yi-thirdparty-dir "browse-kill-ring.el"))
@@ -150,9 +154,9 @@
               (cons "M-y" 'term-send-raw-meta)
               (cons "C-y" 'term-send-raw))))
 
-;; Very handy mode
-(require 'ido)
-(ido-mode)
+;; Very handy mode (included in better-default)
+;(require 'ido)
+;(ido-mode)
 
 (global-set-key (kbd "C-c g") 'goto-line)
 (global-set-key (kbd "C-c f") 'grep)
@@ -301,10 +305,11 @@
 ;; multiple-cursors-mode
 (add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el-1.3.0"))
 (require 'multiple-cursors)
-(global-set-key (kbd "C-c l") 'mc/edit-lines)
+(global-set-key (kbd "C-c @") 'mc/edit-lines)
 (global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c l") 'set-rectangular-region-anchor)
 
 ;; ace-jump-mode
 (load-file (concat yi-thirdparty-dir "ace-jump-mode.el"))
