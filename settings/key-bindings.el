@@ -37,4 +37,13 @@
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c l") 'set-rectangular-region-anchor)
 
+;; ACE jump
+;; you can select the key you prefer to
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+(define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+
+;; Keyboard marco
+(global-set-key (kbd "C-c d") 'kmacro-start-macro)
+(global-set-key (kbd "C-c e") 'kmacro-end-or-call-macro)
+
 (provide 'key-bindings)
