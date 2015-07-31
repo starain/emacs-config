@@ -6,12 +6,20 @@
       (file-name-directory (or load-file-name buffer-file-name)))
 
 (setq yi-thirdparty-dir
-      (concat yi-current-dir
-              "/thirdparty/"))
+      (concat yi-current-dir "/thirdparty/"))
+
+(setq settings-dir
+      (concat yi-current-dir "/settings"))
+
+;; Set up load path
+(add-to-list 'load-path settings-dir)
 
 ;; https://github.com/technomancy/better-defaults
 (load-file (concat yi-thirdparty-dir "better-defaults.el"))
 (require 'better-defaults)
+
+(load-file (concat yi-thirdparty-dir "smex/smex.el"))
+(require 'smex)
 
 (add-to-list 'load-path yi-thirdparty-dir "go-mode.el")
 
@@ -87,14 +95,11 @@
 ;; Browse kill ring, bind to C-c k
 (load-file (concat yi-thirdparty-dir "browse-kill-ring.el"))
 (require 'browse-kill-ring)
-(global-set-key [(control c)(k)] 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 
 ;; swbuff setting.
 (load-file (concat yi-thirdparty-dir "swbuff.el"))
 (require 'swbuff)
-(global-set-key (kbd "M-9") 'swbuff-switch-to-previous-buffer)
-(global-set-key (kbd "M-0") 'swbuff-switch-to-next-buffer)
 (setq swbuff-exclude-buffer-regexps
       '("^ " "\\*.*\\*"))(setq swbuff-status-window-layout 'scroll)
 (setq swbuff-clear-delay 1)
@@ -134,8 +139,6 @@
 (add-hook 'term-mode-hook
   (lambda ()
     (setq term-buffer-maximum-size 10000)))
-(global-set-key (kbd "M-[") 'multi-term-prev)
-(global-set-key (kbd "M-]") 'multi-term-next)
 (when (require 'term nil t) ; only if term can be loaded..
   (setq term-bind-key-alist
         (list (cons "C-c C-c" 'term-interrupt-subjob)
@@ -157,14 +160,6 @@
 ;; Very handy mode (included in better-default)
 ;(require 'ido)
 ;(ido-mode)
-
-(global-set-key (kbd "C-c g") 'goto-line)
-(global-set-key (kbd "C-c f") 'grep)
-(global-set-key [up] 'go-up)
-(global-set-key [down] 'go-down)
-(global-set-key (kbd "C-t") 'multi-term)
-(global-set-key (kbd "C-c s") 'search-forward-regexp)
-(global-set-key (kbd "C-c r") 'search-backward-regexp)
 
 (defun zhangyi-base-dir(base-dir-substring)
   (substring (buffer-file-name) 0 (+ (string-match base-dir-substring buffer-file-name) (length base-dir-substring)))
@@ -236,28 +231,20 @@
   (zhangyi-compile "make" "project")
 )
 
-(global-set-key (kbd "C-c c") 'zhangyi-default-compile)
-
 (defun zhangyi-default-test()
   (interactive)
   (zhangyi-test "make" "project" "_test")
 )
-
-(global-set-key (kbd "C-c t") 'zhangyi-default-test)
 
 (defun zhangyi-default-test-dir()
   (interactive)
   (zhangyi-test-dir "make" "project" "")
 )
 
-(global-set-key (kbd "C-c C-t d") 'zhangyi-default-test-dir)
-
 (defun zhangyi-default-test-project()
   (interactive)
   (zhangyi-test-project "make" "project" "")
 )
-
-(global-set-key (kbd "C-c C-t p") 'zhangyi-default-test-project)
 
 ;; Open header file. Actually it can open any filename between quotes.
 ;; TODO(zhangyi): Need to handle file-not-found
@@ -279,8 +266,6 @@
   (switch-to-buffer (find-file-noselect filename nil))
   (message filename)
 )
-
-(global-set-key (kbd "C-c o") 'zhangyi-open-header-file)
 
 ;; yasnippet
 ;(add-to-list 'load-path (concat yi-thirdparty-dir "yasnippet-0.9.0-beta"))
@@ -305,11 +290,6 @@
 ;; multiple-cursors-mode
 (add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el-1.3.0"))
 (require 'multiple-cursors)
-(global-set-key (kbd "C-c @") 'mc/edit-lines)
-(global-set-key (kbd "C-c >") 'mc/mark-next-like-this)
-(global-set-key (kbd "C-c <") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
-(global-set-key (kbd "C-c l") 'set-rectangular-region-anchor)
 
 ;; ace-jump-mode
 (load-file (concat yi-thirdparty-dir "ace-jump-mode.el"))
@@ -332,5 +312,6 @@
   '(ace-jump-mode-enable-mark-sync))
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
+(require 'key-bindings)
 ;; Start with a nice clean environment:
 (garbage-collect)
