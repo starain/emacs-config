@@ -13,3 +13,6 @@
 [submodule "thirdparty/multiple-cursors.el"]
 	path = thirdparty/multiple-cursors.el
 	url = https://github.com/magnars/multiple-cursors.el.git
+[submodule "thirdparty/zenburn-emacs"]
+	path = thirdparty/zenburn-emacs
+	url = https://github.com/bbatsov/zenburn-emacs.git

@@ -85,7 +85,7 @@
 ;;   (lambda ()
 ;;     (font-lock-mode 0)))
 
-(add-to-list 'custom-theme-load-path (concat yi-thirdparty-dir "themes"))
+(add-to-list 'custom-theme-load-path (concat yi-thirdparty-dir "zenburn-emacs"))
 (load-theme 'zenburn t)
 
 ;; Replace buffer mode by ibuffer (included in better-defaults)
