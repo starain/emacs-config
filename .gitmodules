@@ -10,3 +10,6 @@
 [submodule "thirdparty/better-defaults"]
 	path = thirdparty/better-defaults
 	url = https://github.com/technomancy/better-defaults.git
+[submodule "thirdparty/multiple-cursors.el"]
+	path = thirdparty/multiple-cursors.el
+	url = https://github.com/magnars/multiple-cursors.el.git

@@ -288,7 +288,7 @@
 (ac-set-trigger-key "<tab>")
 
 ;; multiple-cursors-mode
-(add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el-1.3.0"))
+(add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el"))
 (require 'multiple-cursors)
 
 ;; ace-jump-mode
