@@ -307,6 +307,19 @@
 (eval-after-load "ace-jump-mode"
   '(ace-jump-mode-enable-mark-sync))
 
+;; expand-region
+(add-to-list 'load-path (concat yi-thirdparty-dir "expand-region.el"))
+(require 'expand-region)
+
+;; Remove text in active region if inserting text
+(delete-selection-mode 1)
+
+;; Functions (load all files in defuns-dir)
+(setq defuns-dir (expand-file-name "defuns" yi-current-dir))
+(dolist (file (directory-files defuns-dir t "\\w+"))
+  (when (file-regular-p file)
+    (load file)))
+
 (require 'key-bindings)
 (require 'experimental)
 ;; Start with a nice clean environment:

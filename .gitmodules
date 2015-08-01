@@ -22,3 +22,6 @@
 [submodule "thirdparty/go-mode.el"]
 	path = thirdparty/go-mode.el
 	url = https://github.com/dominikh/go-mode.el.git
+[submodule "thirdparty/expand-region.el"]
+	path = thirdparty/expand-region.el
+	url = https://github.com/magnars/expand-region.el

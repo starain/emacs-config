@@ -42,6 +42,10 @@
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
 
+(define-key global-map (kbd "C-c i") 'ido-imenu)
+
+(define-key global-map (kbd "C-c r") 'er/expand-region)
+
 ;; Keyboard marco
 (global-set-key (kbd "C-c d") 'kmacro-start-macro)
 (global-set-key (kbd "C-c e") 'kmacro-end-or-call-macro)
