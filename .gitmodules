@@ -1,0 +1,6 @@
+[submodule "thirdparty/yasnippet"]
+	path = thirdparty/yasnippet
+	url = https://github.com/capitaomorte/yasnippet.git
+[submodule "thirdparty/smex"]
+	path = thirdparty/smex
+	url = https://github.com/nonsequitur/smex
