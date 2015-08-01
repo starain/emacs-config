@@ -104,6 +104,9 @@
 (setq swbuff-separator "|")
 (setq swbuff-window-min-text-height 1)
 
+(load-file (concat yi-thirdparty-dir "smooth-scrolling/smooth-scrolling.el"))
+(require 'smooth-scrolling)
+
 ;; Scroll screen directly, no matter where the pointer is.
 (defun go-up ()
   (interactive)

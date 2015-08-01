@@ -25,3 +25,6 @@
 [submodule "thirdparty/expand-region.el"]
 	path = thirdparty/expand-region.el
 	url = https://github.com/magnars/expand-region.el
+[submodule "thirdparty/smooth-scrolling"]
+	path = thirdparty/smooth-scrolling
+	url = https://github.com/aspiers/smooth-scrolling.git
