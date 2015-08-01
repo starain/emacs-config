@@ -15,8 +15,7 @@
 (add-to-list 'load-path settings-dir)
 (add-to-list 'load-path yi-thirdparty-dir)
 
-;; https://github.com/technomancy/better-defaults
-(load-file (concat yi-thirdparty-dir "better-defaults.el"))
+(load-file (concat yi-thirdparty-dir "better-defaults/better-defaults.el"))
 (require 'better-defaults)
 
 (load-file (concat yi-thirdparty-dir "smex/smex.el"))
