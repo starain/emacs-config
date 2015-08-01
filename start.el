@@ -293,7 +293,7 @@
 (require 'multiple-cursors)
 
 ;; ace-jump-mode
-(load-file (concat yi-thirdparty-dir "ace-jump-mode.el"))
+(load-file (concat yi-thirdparty-dir "ace-jump-mode/ace-jump-mode.el"))
 (autoload
   'ace-jump-mode
   "ace-jump-mode"
