@@ -21,7 +21,10 @@
 (load-file (concat yi-thirdparty-dir "smex/smex.el"))
 (require 'smex)
 
-(add-to-list 'load-path yi-thirdparty-dir "go-mode.el")
+;; golang mode
+(add-to-list 'load-path (concat yi-thirdparty-dir "go-mode.el"))
+(require 'go-mode-autoloads)
+(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; Set up grep to do recursive search by default
 (setq grep-command "grep -nH -R -e ")
@@ -60,11 +63,6 @@
 
 ;; Default column width
 (setq default-fill-column 80)
-
-;; golang mode
-(load-file (concat yi-thirdparty-dir "go-mode.el"))
-(require 'go-mode-load)
-(add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; Highlighted tab and trailing spaces.
 ;; (custom-set-faces
