@@ -13,6 +13,7 @@
 
 ;; Set up load path
 (add-to-list 'load-path settings-dir)
+(add-to-list 'load-path yi-thirdparty-dir)
 
 ;; https://github.com/technomancy/better-defaults
 (load-file (concat yi-thirdparty-dir "better-defaults.el"))
@@ -310,5 +311,6 @@
   '(ace-jump-mode-enable-mark-sync))
 
 (require 'key-bindings)
+(require 'experimental)
 ;; Start with a nice clean environment:
 (garbage-collect)
