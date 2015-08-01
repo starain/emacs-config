@@ -93,7 +93,7 @@
 ; (global-set-key (kbd "C-x C-b") 'ibuffer)
 
 ;; Browse kill ring, bind to C-c k
-(load-file (concat yi-thirdparty-dir "browse-kill-ring.el"))
+(load-file (concat yi-thirdparty-dir "browse-kill-ring/browse-kill-ring.el"))
 (require 'browse-kill-ring)
 (browse-kill-ring-default-keybindings)
 

@@ -16,3 +16,6 @@
 [submodule "thirdparty/zenburn-emacs"]
 	path = thirdparty/zenburn-emacs
 	url = https://github.com/bbatsov/zenburn-emacs.git
+[submodule "thirdparty/browse-kill-ring"]
+	path = thirdparty/browse-kill-ring
+	url = https://github.com/browse-kill-ring/browse-kill-ring.git
