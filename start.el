@@ -278,15 +278,9 @@
 ;; Set Yasnippet's key binding to shift+tab
 ;(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
 
-(add-to-list 'load-path (concat yi-thirdparty-dir "auto-complete-1.3.1"))
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories (concat yi-thirdparty-dir "auto-complete-1.3.1/dict"))
-(ac-config-default)
-;;; set the trigger key so that it can work together with yasnippet on tab key,
-;;; if the word exists in yasnippet, pressing tab will cause yasnippet to
-;;; activate, otherwise, auto-complete will
-(ac-set-trigger-key "TAB")
-(ac-set-trigger-key "<tab>")
+(add-to-list 'load-path (concat yi-thirdparty-dir "company-mode"))
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; multiple-cursors-mode
 (add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el"))
