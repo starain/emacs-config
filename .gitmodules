@@ -28,3 +28,6 @@
 [submodule "thirdparty/smooth-scrolling"]
 	path = thirdparty/smooth-scrolling
 	url = https://github.com/aspiers/smooth-scrolling.git
+[submodule "thirdparty/company-mode"]
+	path = thirdparty/company-mode
+	url = https://github.com/company-mode/company-mode.git
