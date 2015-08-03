@@ -17,4 +17,12 @@
 
 (helm-mode 1)
 
+(add-to-list 'load-path (concat yi-thirdparty-dir "dash.el"))
+(add-to-list 'load-path (concat yi-thirdparty-dir "pkg-info.el"))
+(add-to-list 'load-path (concat yi-thirdparty-dir "projectile"))
+(require 'helm-projectile)
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+(helm-projectile-on)
+
 (provide 'setup-helm)
