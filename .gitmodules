@@ -37,3 +37,6 @@
 [submodule "thirdparty/emacs-async"]
 	path = thirdparty/emacs-async
 	url = https://github.com/jwiegley/emacs-async.git
+[submodule "thirdparty/projectile"]
+	path = thirdparty/projectile
+	url = https://github.com/bbatsov/projectile.git

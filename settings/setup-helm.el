@@ -1,5 +1,9 @@
+;; Amazing productivity package with zillions of useful things.
+;; More detail tutorial: http://tuhdo.github.io/helm-intro.html
+
 (add-to-list 'load-path (concat yi-thirdparty-dir "emacs-async"))
 (add-to-list 'load-path (concat yi-thirdparty-dir "helm"))
+(require 'helm)
 (require 'helm-config)
 
 ;; Enable fuzzy matching for helm-mini
@@ -10,5 +14,7 @@
 (require 'imenu)
 (setq helm-semantic-fuzzy-match t
       helm-imenu-fuzzy-match t)
+
+(helm-mode 1)
 
 (provide 'setup-helm)
