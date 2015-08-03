@@ -17,6 +17,9 @@
 
 (helm-mode 1)
 
+(load-file (concat yi-thirdparty-dir "emacs-helm-ag/helm-ag.el"))
+(require 'helm-ag)
+
 ;; Project file management
 ;; More detail tutorial: http://tuhdo.github.io/helm-projectile.html
 (add-to-list 'load-path (concat yi-thirdparty-dir "dash.el"))
