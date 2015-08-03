@@ -43,3 +43,6 @@
 [submodule "thirdparty/dash.el"]
 	path = thirdparty/dash.el
 	url = https://github.com/magnars/dash.el.git
+[submodule "thirdparty/pkg-info.el"]
+	path = thirdparty/pkg-info.el
+	url = https://github.com/lunaryorn/pkg-info.el.git
