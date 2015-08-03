@@ -1,13 +1,8 @@
-;; Smart M-x
-(global-set-key (kbd "M-x") 'smex)
-(global-set-key (kbd "M-X") 'smex-major-mode-commands)
-(global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
-;; Use C-x C-m to do M-x per Steve Yegge's advice
-(global-set-key (kbd "C-x C-m") 'smex)
-
-;; Browse the kill ring
-(global-set-key (kbd "C-c k") 'browse-kill-ring)
+;; Helm bindings
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-c k") 'helm-show-kill-ring)
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;; swbuff
 (global-set-key (kbd "M-9") 'swbuff-switch-to-previous-buffer)

@@ -318,6 +318,7 @@
   (when (file-regular-p file)
     (load file)))
 
+(require 'setup-helm)
 (require 'key-bindings)
 (require 'experimental)
 ;; Start with a nice clean environment:
