@@ -17,12 +17,15 @@
 
 (helm-mode 1)
 
+;; Project file management
+;; More detail tutorial: http://tuhdo.github.io/helm-projectile.html
 (add-to-list 'load-path (concat yi-thirdparty-dir "dash.el"))
 (add-to-list 'load-path (concat yi-thirdparty-dir "pkg-info.el"))
 (add-to-list 'load-path (concat yi-thirdparty-dir "projectile"))
 (require 'helm-projectile)
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
+(setq projectile-enable-caching t)
 (helm-projectile-on)
 
 (provide 'setup-helm)
