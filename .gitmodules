@@ -40,3 +40,6 @@
 [submodule "thirdparty/projectile"]
 	path = thirdparty/projectile
 	url = https://github.com/bbatsov/projectile.git
+[submodule "thirdparty/dash.el"]
+	path = thirdparty/dash.el
+	url = https://github.com/magnars/dash.el.git
