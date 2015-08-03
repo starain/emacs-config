@@ -285,6 +285,7 @@
 ;; multiple-cursors-mode
 (add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el"))
 (require 'multiple-cursors)
+(require 'setup-multiple-cursors)
 
 ;; ace-jump-mode
 (load-file (concat yi-thirdparty-dir "ace-jump-mode/ace-jump-mode.el"))

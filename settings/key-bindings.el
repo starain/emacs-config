@@ -36,6 +36,8 @@
 (global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c l") 'set-rectangular-region-anchor)
+(global-set-key (kbd "C-c C-n") 'yi-mc-skip-next-like-this)
+(global-set-key (kbd "C-c C-p") 'yi-mc-skip-previous-like-this)
 
 ;; ACE jump
 ;; you can select the key you prefer to
