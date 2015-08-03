@@ -83,15 +83,6 @@
 (add-to-list 'custom-theme-load-path (concat yi-thirdparty-dir "zenburn-emacs"))
 (load-theme 'zenburn t)
 
-;; swbuff setting.
-(load-file (concat yi-thirdparty-dir "swbuff.el"))
-(require 'swbuff)
-(setq swbuff-exclude-buffer-regexps
-      '("^ " "\\*.*\\*"))(setq swbuff-status-window-layout 'scroll)
-(setq swbuff-clear-delay 1)
-(setq swbuff-separator "|")
-(setq swbuff-window-min-text-height 1)
-
 (load-file (concat yi-thirdparty-dir "smooth-scrolling/smooth-scrolling.el"))
 (require 'smooth-scrolling)
 
@@ -229,24 +220,6 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
-;; ace-jump-mode
-(load-file (concat yi-thirdparty-dir "ace-jump-mode/ace-jump-mode.el"))
-(autoload
-  'ace-jump-mode
-  "ace-jump-mode"
-  "Emacs quick move minor mode"
-  t)
-;;
-;; enable a more powerful jump back function from ace jump mode
-;;
-(autoload
-  'ace-jump-mode-pop-mark
-  "ace-jump-mode"
-  "Ace jump back:-)"
-  t)
-(eval-after-load "ace-jump-mode"
-  '(ace-jump-mode-enable-mark-sync))
-
 ;; expand-region
 (add-to-list 'load-path (concat yi-thirdparty-dir "expand-region.el"))
 (require 'expand-region)
@@ -260,6 +233,8 @@
   (when (file-regular-p file)
     (load file)))
 
+(require 'setup-ace-jump-mode)
+(require 'setup-swbuff)
 (require 'setup-multiple-cursors)
 (require 'setup-multi-term)
 (require 'setup-helm)
