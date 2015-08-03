@@ -266,11 +266,6 @@
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 
-;; multiple-cursors-mode
-(add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el"))
-(require 'multiple-cursors)
-(require 'setup-multiple-cursors)
-
 ;; ace-jump-mode
 (load-file (concat yi-thirdparty-dir "ace-jump-mode/ace-jump-mode.el"))
 (autoload
@@ -302,6 +297,7 @@
   (when (file-regular-p file)
     (load file)))
 
+(require 'setup-multiple-cursors)
 (require 'setup-helm)
 (require 'key-bindings)
 (require 'experimental)

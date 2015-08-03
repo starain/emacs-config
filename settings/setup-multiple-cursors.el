@@ -1,3 +1,6 @@
+(add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el"))
+(require 'multiple-cursors)
+
 (defun yi-mc-skip-next-like-this (args)
   (interactive "p")
   (mc/mark-next-like-this args)
