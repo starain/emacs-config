@@ -18,9 +18,6 @@
 (load-file (concat yi-thirdparty-dir "better-defaults/better-defaults.el"))
 (require 'better-defaults)
 
-(load-file (concat yi-thirdparty-dir "smex/smex.el"))
-(require 'smex)
-
 ;; golang mode
 (add-to-list 'load-path (concat yi-thirdparty-dir "go-mode.el"))
 (require 'go-mode-autoloads)
@@ -86,15 +83,6 @@
 (add-to-list 'custom-theme-load-path (concat yi-thirdparty-dir "zenburn-emacs"))
 (load-theme 'zenburn t)
 
-;; Replace buffer mode by ibuffer (included in better-defaults)
-; (require 'ibuffer)
-; (global-set-key (kbd "C-x C-b") 'ibuffer)
-
-;; Browse kill ring, bind to C-c k
-(load-file (concat yi-thirdparty-dir "browse-kill-ring/browse-kill-ring.el"))
-(require 'browse-kill-ring)
-(browse-kill-ring-default-keybindings)
-
 ;; swbuff setting.
 (load-file (concat yi-thirdparty-dir "swbuff.el"))
 (require 'swbuff)
@@ -157,10 +145,6 @@
               (cons "M-p" 'term-send-raw-meta)
               (cons "M-y" 'term-send-raw-meta)
               (cons "C-y" 'term-send-raw))))
-
-;; Very handy mode (included in better-default)
-;(require 'ido)
-;(ido-mode)
 
 (defun zhangyi-base-dir(base-dir-substring)
   (substring (buffer-file-name) 0 (+ (string-match base-dir-substring buffer-file-name) (length base-dir-substring)))
