@@ -28,8 +28,8 @@
 (global-set-key (kbd "M-0") 'swbuff-switch-to-next-buffer)
 
 ;; switch terms
-(global-set-key (kbd "M-[") 'multi-term-prev)
-(global-set-key (kbd "M-]") 'multi-term-next)
+(global-set-key (kbd "M-(") 'multi-term-prev)
+(global-set-key (kbd "M-)") 'multi-term-next)
 
 (global-set-key (kbd "C-c g") 'goto-line)
 (global-set-key (kbd "C-c f") 'grep)
