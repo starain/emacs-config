@@ -61,6 +61,9 @@
 ;; Default column width
 (setq default-fill-column 80)
 
+;; Auto reload file, works better with git
+(global-auto-revert-mode t)
+
 ;; Highlighted tab and trailing spaces.
 ;; (custom-set-faces
 ;;   '(my-tab-face ((((class color)) (:background "white"))) t)
@@ -234,10 +237,11 @@
     (load file)))
 
 (require 'setup-ace-jump-mode)
-(require 'setup-swbuff)
-(require 'setup-multiple-cursors)
-(require 'setup-multi-term)
 (require 'setup-helm)
+(require 'setup-magit)
+(require 'setup-multi-term)
+(require 'setup-multiple-cursors)
+(require 'setup-swbuff)
 (require 'key-bindings)
 (require 'experimental)
 ;; Start with a nice clean environment:
