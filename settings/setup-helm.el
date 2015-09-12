@@ -22,6 +22,17 @@
 
 ;; Project file management
 ;; More detail tutorial: http://tuhdo.github.io/helm-projectile.html
+;;
+;; To make helm-projectile-ag use .projectile whitelist, need to change the following things:
+;; in helm-ag.el (emacs-helm-ag):
+;; -         (helm-ag--default-target (cond (this-file (list this-file))
+;; +         (helm-ag--default-target (cond (this-file (cond ((listp this-file)
+;; +                                                          this-file)
+;; +                                                         (t
+;; +                                                          (list this-file))))
+;; in helm-projectile.el (projectile):
+;; - (helm-do-ag (projectile-project-root)
+;; + (helm-do-ag (projectile-project-root) (or (car (projectile-parse-dirconfig-file)) nil))
 (add-to-list 'load-path (concat yi-thirdparty-dir "dash.el"))
 (add-to-list 'load-path (concat yi-thirdparty-dir "pkg-info.el"))
 (add-to-list 'load-path (concat yi-thirdparty-dir "projectile"))
