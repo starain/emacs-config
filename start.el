@@ -64,6 +64,8 @@
 ;; Auto reload file, works better with git
 (global-auto-revert-mode t)
 
+(setq inhibit-startup-message t)
+
 ;; Highlighted tab and trailing spaces.
 ;; (custom-set-faces
 ;;   '(my-tab-face ((((class color)) (:background "white"))) t)
