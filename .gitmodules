@@ -49,3 +49,9 @@
 [submodule "thirdparty/emacs-helm-ag"]
 	path = thirdparty/emacs-helm-ag
 	url = https://github.com/syohex/emacs-helm-ag.git
+[submodule "thirdparty/magit"]
+	path = thirdparty/magit
+	url = https://github.com/magit/magit.git
+[submodule "thirdparty/git-modes"]
+	path = thirdparty/git-modes
+	url = https://github.com/magit/git-modes.git
