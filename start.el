@@ -6,13 +6,13 @@
       (file-name-directory (or load-file-name buffer-file-name)))
 
 (setq yi-thirdparty-dir
-      (concat yi-current-dir "/thirdparty/"))
+      (concat yi-current-dir "thirdparty/"))
 
-(setq settings-dir
-      (concat yi-current-dir "/settings"))
+(setq yi-settings-dir
+      (concat yi-current-dir "settings"))
 
 ;; Set up load path
-(add-to-list 'load-path settings-dir)
+(add-to-list 'load-path yi-settings-dir)
 (add-to-list 'load-path yi-thirdparty-dir)
 
 (load-file (concat yi-thirdparty-dir "better-defaults/better-defaults.el"))
@@ -206,16 +206,6 @@
   (message filename)
 )
 
-;; yasnippet
-(add-to-list 'load-path (concat yi-thirdparty-dir "yasnippet"))
-(require 'yasnippet)
-(yas-global-mode t)
-;; Remove Yasnippet's default tab key binding
-;(define-key yas-minor-mode-map (kbd "<tab>") nil)
-;(define-key yas-minor-mode-map (kbd "TAB") nil)
-;; Set Yasnippet's key binding to shift+tab
-;(define-key yas-minor-mode-map (kbd "<backtab>") 'yas-expand)
-
 (add-to-list 'load-path (concat yi-thirdparty-dir "company-mode"))
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
@@ -238,6 +228,7 @@
 (require 'setup-multiple-cursors)
 (require 'setup-multi-term)
 (require 'setup-helm)
+(require 'setup-yasnippet)
 (require 'key-bindings)
 (require 'experimental)
 ;; Start with a nice clean environment:
