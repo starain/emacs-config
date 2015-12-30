@@ -1,6 +1,9 @@
 (load-file (concat yi-thirdparty-dir "multi-term.el"))
 (require 'multi-term)
 (setq multi-term-program "/bin/zsh")
+
+;; prevent autocomplete overflow in zsh after window resizing
+(setq multi-term-scroll-show-maximum-output t)
 ;; yanking / pasting text into a terminal buffer
 ;;(add-hook 'term-mode-hook
 ;;  (lambda ()
