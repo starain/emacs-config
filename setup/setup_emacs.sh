@@ -7,6 +7,7 @@ DEFAULT_CONFIG_FILE="$HOME/.emacs"
 
 install() {
     # sync all git submodule
+    cd $CONFIG_DIR
     git submodule update --init --recursive
 
     # helm has special requirement for setting up
