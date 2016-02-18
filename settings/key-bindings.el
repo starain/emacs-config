@@ -38,7 +38,7 @@
 (global-set-key (kbd "C-t") 'multi-term)
 
 ;; development
-(global-set-key (kbd "C-c c") 'zhangyi-default-compile)
+(global-set-key (kbd "C-c C-c") 'zhangyi-default-compile)
 (global-set-key (kbd "C-c t") 'zhangyi-default-test)
 (global-set-key (kbd "C-c C-t d") 'zhangyi-default-test-dir)
 (global-set-key (kbd "C-c C-t p") 'zhangyi-default-test-project)
@@ -48,7 +48,7 @@
 (global-set-key (kbd "C-c m") 'mc/edit-lines)
 (global-set-key (kbd "C-c n") 'mc/mark-next-like-this)
 (global-set-key (kbd "C-c p") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c a") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-c C-m") 'mc/mark-all-like-this)
 (global-set-key (kbd "C-c l") 'set-rectangular-region-anchor)
 (global-set-key (kbd "C-c C-n") 'yi-mc-skip-next-like-this)
 (global-set-key (kbd "C-c C-p") 'yi-mc-skip-previous-like-this)
@@ -65,5 +65,9 @@
 ;; Keyboard marco
 (global-set-key (kbd "C-c d") 'kmacro-start-macro)
 (global-set-key (kbd "C-c e") 'kmacro-end-or-call-macro)
+
+;; org mode and remember
+(global-set-key (kbd "C-c c") 'org-capture)
+(global-set-key (kbd "C-c a") 'org-agenda)
 
 (provide 'key-bindings)
