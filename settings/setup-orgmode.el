@@ -61,11 +61,11 @@
 ;; Capture templates for: TODO tasks, Notes, appointments, phone calls, meetings, and org-protocol
 (setq org-capture-templates
       '(("t" "todo" entry (file org-default-notes-file)
-         "* TODO %?\n%U\n%a\n" :clock-in t :clock-resume t)
+         "* TODO %?\n%U\n" :clock-in t :clock-resume t)
         ("r" "respond" entry (file org-default-notes-file)
-         "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+         "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n" :clock-in t :clock-resume t :immediate-finish t)
         ("n" "note" entry (file org-default-notes-file)
-         "* %? :NOTE:\n%U\n%a\n" :clock-in t :clock-resume t)
+         "* %? :NOTE:\n%U\n" :clock-in t :clock-resume t)
         ("j" "Journal" entry (file+datetree (concat org-directory "/diary.org"))
          "* %?\n%U\n" :clock-in t :clock-resume t)
         ("w" "org-protocol" entry (file org-default-notes-file)
@@ -75,7 +75,7 @@
         ("p" "Phone call" entry (file org-default-notes-file)
          "* PHONE %? :PHONE:\n%U" :clock-in t :clock-resume t)
         ("h" "Habit" entry (file org-default-notes-file)
-         "* NEXT %?\n%U\n%a\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n")))
+         "* NEXT %?\n%U\nSCHEDULED: %(format-time-string \"%<<%Y-%m-%d %a .+1d/3d>>\")\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n")))
 
 ;; Refile setting
 ;; Targets include this file and any file contributing to the agenda - up to 9 levels deep
@@ -607,5 +607,54 @@ A prefix arg forces clock in of the default task."
 
 ;; Agenda log mode items to display (closed and state changes by default)
 (setq org-agenda-log-mode-items (quote (closed state)))
+
+;; Tags with fast selection keys.
+;; startgroup - endgroup tags are mutually exclusive.
+(setq org-tag-alist '((:startgroup)
+                      ("@office" . ?o)
+                      ("@home" . ?H)
+                      (:endgroup)
+                      ("WAITING" . ?w)
+                      ("HOLD" . ?h)
+                      ("PERSONAL" . ?P)
+                      ("WORK" . ?W)
+                      ("ORG" . ?O)
+                      ("crypt" . ?E)
+                      ("NOTE" . ?n)
+                      ("CANCELLED" . ?c)
+                      ("FLAGGED" . ??)))
+
+;; Allow setting single tags without the menu
+(setq org-fast-tag-selection-single-key (quote expert))
+
+;; For tag searches ignore tasks with scheduled and deadline dates
+(setq org-agenda-tags-todo-honor-ignore-options t)
+
+;; Make agenda default as day mode
+(setq org-agenda-span 'day)
+
+;; Keep tasks with dates on the global todo lists
+(setq org-agenda-todo-ignore-with-date nil)
+
+;; Keep tasks with deadlines on the global todo lists
+(setq org-agenda-todo-ignore-deadlines nil)
+
+;; Keep tasks with scheduled dates on the global todo lists
+(setq org-agenda-todo-ignore-scheduled nil)
+
+;; Keep tasks with timestamps on the global todo lists
+(setq org-agenda-todo-ignore-timestamp nil)
+
+;; Remove completed deadline tasks from the agenda view
+(setq org-agenda-skip-deadline-if-done t)
+
+;; Remove completed scheduled tasks from the agenda view
+(setq org-agenda-skip-scheduled-if-done t)
+
+;; Remove completed items from search results
+(setq org-agenda-skip-timestamp-if-done t)
+
+;; Prevents accidentally editing hidden text when the point is inside a folded region
+(setq org-catch-invisible-edits 'error)
 
 (provide 'setup-orgmode)
