@@ -28,7 +28,7 @@
 
 (setq org-agenda-files
       '("~/notes/org"
-        "~/notes/org/corp"))
+        "~/notes/corp"))
 
 ;; TODO setups
 (setq org-todo-keywords
