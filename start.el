@@ -234,7 +234,9 @@
 (require 'setup-magit)
 (require 'setup-multi-term)
 (require 'setup-multiple-cursors)
+(require 'setup-orgmode)
 (require 'setup-swbuff)
+
 (require 'key-bindings)
 (require 'experimental)
 ;; Start with a nice clean environment:

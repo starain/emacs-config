@@ -66,4 +66,15 @@
 (global-set-key (kbd "C-c d") 'kmacro-start-macro)
 (global-set-key (kbd "C-c e") 'kmacro-end-or-call-macro)
 
+;; org mode
+(define-prefix-command 'org-map)
+(global-set-key (kbd "C-o") 'org-map)
+(global-set-key (kbd "C-o c") 'org-capture)
+(global-set-key (kbd "C-o a") 'org-agenda)
+(global-set-key (kbd "C-o b") 'org-iswitchb)
+(global-set-key (kbd "C-o i") 'bh/punch-in)
+(global-set-key (kbd "C-o o") 'bh/punch-out)
+(global-set-key (kbd "C-o j") 'org-clock-goto)
+(global-set-key (kbd "C-o SPC") 'bh/clock-in-last-task)
+
 (provide 'key-bindings)

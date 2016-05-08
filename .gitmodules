@@ -55,3 +55,6 @@
 [submodule "thirdparty/git-modes"]
 	path = thirdparty/git-modes
 	url = https://github.com/magit/git-modes.git
+[submodule "thirdparty/helm-projectile"]
+	path = thirdparty/helm-projectile
+	url = https://github.com/bbatsov/helm-projectile.git
