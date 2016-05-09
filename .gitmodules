@@ -4,9 +4,6 @@
 [submodule "thirdparty/smex"]
 	path = thirdparty/smex
 	url = https://github.com/nonsequitur/smex
-[submodule "thirdparty/ace-jump-mode"]
-	path = thirdparty/ace-jump-mode
-	url = https://github.com/winterTTr/ace-jump-mode.git
 [submodule "thirdparty/better-defaults"]
 	path = thirdparty/better-defaults
 	url = https://github.com/technomancy/better-defaults.git
