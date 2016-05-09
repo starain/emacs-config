@@ -237,8 +237,6 @@
     (unless (package-installed-p package)
       (package-install package))))
 
-(install-packages '(flycheck))
-
 (require 'setup-ace-jump-mode)
 (require 'setup-cedet)
 (require 'setup-company-mode)
