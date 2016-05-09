@@ -211,10 +211,6 @@
   (message filename)
 )
 
-(add-to-list 'load-path (concat yi-thirdparty-dir "company-mode"))
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-
 ;; expand-region
 (add-to-list 'load-path (concat yi-thirdparty-dir "expand-region.el"))
 (require 'expand-region)
@@ -228,7 +224,25 @@
   (when (file-regular-p file)
     (load file)))
 
+(require 'package)
+(add-to-list 'package-archives
+             '("melpa" . "http://stable.melpa.org/packages/") t)
+(package-initialize)
+(defun install-packages (packages)
+  "Install all required packages."
+  (interactive)
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (dolist (package packages)
+    (unless (package-installed-p package)
+      (package-install package))))
+
+(install-packages '(flycheck))
+
 (require 'setup-ace-jump-mode)
+(require 'setup-cedet)
+(require 'setup-company-mode)
+(require 'setup-flycheck)
 (require 'setup-helm)
 (require 'setup-yasnippet)
 (require 'setup-magit)
