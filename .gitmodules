@@ -25,24 +25,9 @@
 [submodule "thirdparty/smooth-scrolling"]
 	path = thirdparty/smooth-scrolling
 	url = https://github.com/aspiers/smooth-scrolling.git
-[submodule "thirdparty/helm"]
-	path = thirdparty/helm
-	url = https://github.com/emacs-helm/helm.git
-[submodule "thirdparty/emacs-async"]
-	path = thirdparty/emacs-async
-	url = https://github.com/jwiegley/emacs-async.git
 [submodule "thirdparty/projectile"]
 	path = thirdparty/projectile
 	url = https://github.com/bbatsov/projectile.git
-[submodule "thirdparty/dash.el"]
-	path = thirdparty/dash.el
-	url = https://github.com/magnars/dash.el.git
-[submodule "thirdparty/pkg-info.el"]
-	path = thirdparty/pkg-info.el
-	url = https://github.com/lunaryorn/pkg-info.el.git
-[submodule "thirdparty/emacs-helm-ag"]
-	path = thirdparty/emacs-helm-ag
-	url = https://github.com/syohex/emacs-helm-ag.git
 [submodule "thirdparty/helm-projectile"]
 	path = thirdparty/helm-projectile
 	url = https://github.com/bbatsov/helm-projectile.git
