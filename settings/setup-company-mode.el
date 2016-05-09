@@ -1,4 +1,5 @@
-(add-to-list 'load-path (concat yi-thirdparty-dir "company-mode"))
+(install-packages '(company))
+
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 

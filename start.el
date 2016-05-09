@@ -225,10 +225,12 @@
     (load file)))
 
 (require 'package)
-(add-to-list 'package-archives
-             '("melpa" . "http://stable.melpa.org/packages/") t)
+
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ))
 (package-initialize)
-(defun install-packages (packages)
+(defun install-packages (packages &optional package-archive-list)
   "Install all required packages."
   (interactive)
   (unless package-archive-contents
