@@ -1,4 +1,4 @@
-(add-to-list 'load-path (concat yi-thirdparty-dir "multiple-cursors.el"))
+(install-packages '(multiple-cursors))
 (require 'multiple-cursors)
 
 (defun yi-mc-skip-next-like-this (args)

@@ -1,4 +1,5 @@
-(load-file (concat yi-thirdparty-dir "ace-jump-mode/ace-jump-mode.el"))
+(install-packages '(ace-jump-mode))
+
 (autoload
   'ace-jump-mode
   "ace-jump-mode"

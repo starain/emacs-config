@@ -1,18 +1,9 @@
-[submodule "thirdparty/yasnippet"]
-	path = thirdparty/yasnippet
-	url = https://github.com/capitaomorte/yasnippet.git
 [submodule "thirdparty/smex"]
 	path = thirdparty/smex
 	url = https://github.com/nonsequitur/smex
-[submodule "thirdparty/ace-jump-mode"]
-	path = thirdparty/ace-jump-mode
-	url = https://github.com/winterTTr/ace-jump-mode.git
 [submodule "thirdparty/better-defaults"]
 	path = thirdparty/better-defaults
 	url = https://github.com/technomancy/better-defaults.git
-[submodule "thirdparty/multiple-cursors.el"]
-	path = thirdparty/multiple-cursors.el
-	url = https://github.com/magnars/multiple-cursors.el.git
 [submodule "thirdparty/zenburn-emacs"]
 	path = thirdparty/zenburn-emacs
 	url = https://github.com/bbatsov/zenburn-emacs.git
@@ -28,33 +19,13 @@
 [submodule "thirdparty/smooth-scrolling"]
 	path = thirdparty/smooth-scrolling
 	url = https://github.com/aspiers/smooth-scrolling.git
-[submodule "thirdparty/company-mode"]
-	path = thirdparty/company-mode
-	url = https://github.com/company-mode/company-mode.git
-[submodule "thirdparty/helm"]
-	path = thirdparty/helm
-	url = https://github.com/emacs-helm/helm.git
-[submodule "thirdparty/emacs-async"]
-	path = thirdparty/emacs-async
-	url = https://github.com/jwiegley/emacs-async.git
 [submodule "thirdparty/projectile"]
 	path = thirdparty/projectile
 	url = https://github.com/bbatsov/projectile.git
-[submodule "thirdparty/dash.el"]
-	path = thirdparty/dash.el
-	url = https://github.com/magnars/dash.el.git
-[submodule "thirdparty/pkg-info.el"]
-	path = thirdparty/pkg-info.el
-	url = https://github.com/lunaryorn/pkg-info.el.git
-[submodule "thirdparty/emacs-helm-ag"]
-	path = thirdparty/emacs-helm-ag
-	url = https://github.com/syohex/emacs-helm-ag.git
-[submodule "thirdparty/magit"]
-	path = thirdparty/magit
-	url = https://github.com/magit/magit.git
-[submodule "thirdparty/git-modes"]
-	path = thirdparty/git-modes
-	url = https://github.com/magit/git-modes.git
 [submodule "thirdparty/helm-projectile"]
 	path = thirdparty/helm-projectile
 	url = https://github.com/bbatsov/helm-projectile.git
+[submodule "thirdparty/company-c-headers"]
+	path = thirdparty/company-c-headers
+	url = https://github.com/randomphrase/company-c-headers.git
+

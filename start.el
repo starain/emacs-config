@@ -15,11 +15,26 @@
 (add-to-list 'load-path yi-settings-dir)
 (add-to-list 'load-path yi-thirdparty-dir)
 
-(load-file (concat yi-thirdparty-dir "better-defaults/better-defaults.el"))
+(require 'package)
+
+(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
+                         ("melpa-stable" . "http://stable.melpa.org/packages/")
+                         ))
+(package-initialize)
+(defun install-packages (packages &optional package-archive-list)
+  "Install all required packages."
+  (interactive)
+  (unless package-archive-contents
+    (package-refresh-contents))
+  (dolist (package packages)
+    (unless (package-installed-p package)
+      (package-install package))))
+
+(install-packages '(better-defaults))
 (require 'better-defaults)
 
 ;; golang mode
-(add-to-list 'load-path (concat yi-thirdparty-dir "go-mode.el"))
+(install-packages '(go-mode))
 (require 'go-mode-autoloads)
 (add-hook 'before-save-hook 'gofmt-before-save)
 
@@ -85,10 +100,10 @@
 ;;   (lambda ()
 ;;     (font-lock-mode 0)))
 
-(add-to-list 'custom-theme-load-path (concat yi-thirdparty-dir "zenburn-emacs"))
+(install-packages '(zenburn-theme))
 (load-theme 'zenburn t)
 
-(load-file (concat yi-thirdparty-dir "smooth-scrolling/smooth-scrolling.el"))
+(install-packages '(smooth-scrolling))
 (require 'smooth-scrolling)
 
 ;; Scroll screen directly, no matter where the pointer is.
@@ -211,12 +226,8 @@
   (message filename)
 )
 
-(add-to-list 'load-path (concat yi-thirdparty-dir "company-mode"))
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-
 ;; expand-region
-(add-to-list 'load-path (concat yi-thirdparty-dir "expand-region.el"))
+(install-packages '(expand-region))
 (require 'expand-region)
 
 ;; Remove text in active region if inserting text
@@ -229,6 +240,9 @@
     (load file)))
 
 (require 'setup-ace-jump-mode)
+(require 'setup-cedet)
+(require 'setup-company-mode)
+(require 'setup-flycheck)
 (require 'setup-helm)
 (require 'setup-yasnippet)
 (require 'setup-magit)

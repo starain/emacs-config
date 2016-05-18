@@ -1,5 +1,6 @@
 ;; yasnippet
-(add-to-list 'load-path (concat yi-thirdparty-dir "yasnippet"))
+(install-packages '(yasnippet))
+
 (require 'yasnippet)
 (add-to-list 'yas-snippet-dirs (concat yi-settings-dir "/snippets"))
 (yas-global-mode t)
