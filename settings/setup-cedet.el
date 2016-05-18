@@ -1,3 +1,5 @@
+;; Dev env setup, heavily based on http://tuhdo.github.io/c-ide.html
+
 (require 'semantic)
 (require 'semantic/bovine/gcc)
 
