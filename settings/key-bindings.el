@@ -63,7 +63,7 @@
 (define-key global-map (kbd "C-c r") 'er/expand-region)
 
 ;; Keyboard marco
-(global-set-key (kbd "C-c d") 'kmacro-start-macro)
+(global-set-key (kbd "C-c s") 'kmacro-start-macro)
 (global-set-key (kbd "C-c e") 'kmacro-end-or-call-macro)
 
 ;; org mode
