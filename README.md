@@ -1,5 +1,6 @@
 # External dependencies
 - the_silver_searcher: like ack but faster searching program.
+- dovecot, offlineimap for gnus
 
 # Hot keys
 
