@@ -10,11 +10,6 @@ install() {
     cd $CONFIG_DIR
     git submodule update --init --recursive
 
-    # helm has special requirement for setting up
-    cd $CONFIG_DIR/thirdparty/helm
-    make
-    cd $CONFIG_DIR
-
     echo ";; BEGIN: $MAGIC_ANCHOR" >> $DEFAULT_CONFIG_FILE
     echo "(load-file \"$CONFIG_DIR/start.el\")" >> $DEFAULT_CONFIG_FILE
     echo ";; END: $MAGIC_ANCHOR" >> $DEFAULT_CONFIG_FILE
