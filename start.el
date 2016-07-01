@@ -242,6 +242,7 @@
 (require 'setup-ace-jump-mode)
 (require 'setup-cedet)
 (require 'setup-company-mode)
+(require 'setup-ess)
 (require 'setup-flycheck)
 (require 'setup-helm)
 (require 'setup-yasnippet)
