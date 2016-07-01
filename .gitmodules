@@ -1,30 +1,3 @@
-[submodule "thirdparty/smex"]
-	path = thirdparty/smex
-	url = https://github.com/nonsequitur/smex
-[submodule "thirdparty/better-defaults"]
-	path = thirdparty/better-defaults
-	url = https://github.com/technomancy/better-defaults.git
-[submodule "thirdparty/zenburn-emacs"]
-	path = thirdparty/zenburn-emacs
-	url = https://github.com/bbatsov/zenburn-emacs.git
-[submodule "thirdparty/browse-kill-ring"]
-	path = thirdparty/browse-kill-ring
-	url = https://github.com/browse-kill-ring/browse-kill-ring.git
-[submodule "thirdparty/go-mode.el"]
-	path = thirdparty/go-mode.el
-	url = https://github.com/dominikh/go-mode.el.git
-[submodule "thirdparty/expand-region.el"]
-	path = thirdparty/expand-region.el
-	url = https://github.com/magnars/expand-region.el
-[submodule "thirdparty/smooth-scrolling"]
-	path = thirdparty/smooth-scrolling
-	url = https://github.com/aspiers/smooth-scrolling.git
-[submodule "thirdparty/projectile"]
-	path = thirdparty/projectile
-	url = https://github.com/bbatsov/projectile.git
-[submodule "thirdparty/helm-projectile"]
-	path = thirdparty/helm-projectile
-	url = https://github.com/bbatsov/helm-projectile.git
 [submodule "thirdparty/company-c-headers"]
 	path = thirdparty/company-c-headers
 	url = https://github.com/randomphrase/company-c-headers.git

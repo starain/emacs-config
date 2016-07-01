@@ -1,7 +1,7 @@
 ;; Amazing productivity package with zillions of useful things.
 ;; More detail tutorial: http://tuhdo.github.io/helm-intro.html
 
-(install-packages '(helm helm-ag))
+(install-packages '(helm helm-ag projectile helm-projectile))
 (require 'helm)
 (require 'helm-config)
 
@@ -20,9 +20,6 @@
 
 ;; Project file management
 ;; More detail tutorial: http://tuhdo.github.io/helm-projectile.html
-;;
-(add-to-list 'load-path (concat yi-thirdparty-dir "projectile"))
-(add-to-list 'load-path (concat yi-thirdparty-dir "helm-projectile"))
 (require 'helm-projectile)
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)

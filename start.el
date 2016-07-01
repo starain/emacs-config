@@ -17,9 +17,7 @@
 
 (require 'package)
 
-(setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("melpa-stable" . "http://stable.melpa.org/packages/")
-                         ))
+(setq package-archives '(("melpa" . "http://melpa.org/packages/")))
 (package-initialize)
 (defun install-packages (packages &optional package-archive-list)
   "Install all required packages."
