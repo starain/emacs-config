@@ -27,8 +27,7 @@
 (setq org-default-notes-file (concat org-directory "/refile.org"))
 
 (setq org-agenda-files
-      '("~/notes/org"
-        "~/notes/corp"))
+      '("~/notes/org"))
 
 ;; TODO setups
 (setq org-todo-keywords
@@ -62,14 +61,16 @@
 (setq org-capture-templates
       '(("t" "todo" entry (file org-default-notes-file)
          "* TODO %?\n%U\n" :clock-in t :clock-resume t)
-        ("r" "respond" entry (file org-default-notes-file)
-         "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n" :clock-in t :clock-resume t :immediate-finish t)
+        ;; Response email integration doesn't work yet.
+        ;; ("r" "respond" entry (file org-default-notes-file)
+        ;;  "* NEXT Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n" :clock-in t :clock-resume t :immediate-finish t)
         ("n" "note" entry (file org-default-notes-file)
          "* %? :NOTE:\n%U\n" :clock-in t :clock-resume t)
         ("j" "Journal" entry (file+datetree (concat org-directory "/diary.org"))
          "* %?\n%U\n" :clock-in t :clock-resume t)
-        ("w" "org-protocol" entry (file org-default-notes-file)
-         "* TODO Review %c\n%U\n" :immediate-finish t)
+        ;; Org protocol integration doesn't work yet.
+        ;; ("w" "org-protocol" entry (file org-default-notes-file)
+        ;;  "* TODO Review %c\n%U\n" :immediate-finish t)
         ("m" "Meeting" entry (file org-default-notes-file)
          "* MEETING with %? :MEETING:\n%U" :clock-in t :clock-resume t)
         ("p" "Phone call" entry (file org-default-notes-file)
