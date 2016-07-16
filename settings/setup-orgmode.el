@@ -24,10 +24,11 @@
 
 ;; Start trying with a more complicated setup: http://doc.norang.ca/org-mode.html
 (setq org-directory "~/notes/org")
-(setq org-default-notes-file (concat org-directory "/refile.org"))
+(setq org-default-notes-file "~/notes/secure/refile.org")
 
 (setq org-agenda-files
-      '("~/notes/org"))
+      '("~/notes/org"
+        "~/notes/secure"))
 
 ;; TODO setups
 (setq org-todo-keywords
