@@ -7,7 +7,7 @@
 
 ;; Enable fuzzy matching for helm-mini
 (setq helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match)
+      helm-recentf-fuzzy-match t)
 
 ;; Enable fuzzy matching for sematic matching
 (require 'imenu)
