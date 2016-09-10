@@ -43,6 +43,8 @@
 (global-set-key (kbd "C-c C-t d") 'zhangyi-default-test-dir)
 (global-set-key (kbd "C-c C-t p") 'zhangyi-default-test-project)
 (global-set-key (kbd "C-c o") 'zhangyi-open-header-file)
+(global-set-key (kbd "M-n") #'next-error)
+(global-set-key (kbd "M-p") (lambda() (interactive) (next-error -1)))
 
 ;; multi cursors
 (global-set-key (kbd "C-c m") 'mc/edit-lines)
