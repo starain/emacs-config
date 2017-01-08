@@ -1,4 +1,4 @@
-(install-packages '(ace-jump-mode))
+(install-packages '(ace-jump-mode ace-window))
 
 (autoload
   'ace-jump-mode

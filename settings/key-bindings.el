@@ -59,6 +59,7 @@
 ;; you can select the key you prefer to
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 (define-key global-map (kbd "C-x SPC") 'ace-jump-mode-pop-mark)
+(define-key global-map (kbd "C-x o") 'ace-window)
 
 (define-key global-map (kbd "C-c i") 'ido-imenu)
 
