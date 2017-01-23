@@ -17,7 +17,7 @@
 
 (require 'package)
 
-(add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 (defun install-packages (packages &optional package-archive-list)
   "Install all required packages."
