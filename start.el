@@ -33,7 +33,7 @@
 
 ;; golang mode
 (install-packages '(go-mode))
-(require 'go-mode-autoloads)
+(load "go-mode-autoloads.el")
 (add-hook 'before-save-hook 'gofmt-before-save)
 
 ;; Set up grep to do recursive search by default
