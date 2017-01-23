@@ -47,6 +47,10 @@
 ;; Show column number
 (setq column-number-mode t)
 
+;; Show line number
+(setq linum-format "%d ")
+(global-linum-mode 1)
+
 ;; Tab as 4 space
 (setq default-tab-width 4)
 
