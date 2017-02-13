@@ -254,6 +254,7 @@
 (require 'setup-orgmode)
 (require 'setup-swbuff)
 
+;; (require 'setup-evil)
 (require 'key-bindings)
 (require 'experimental)
 ;; Start with a nice clean environment:
