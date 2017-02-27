@@ -235,6 +235,9 @@
 ;; Remove text in active region if inserting text
 (delete-selection-mode 1)
 
+;; Code block folding
+(add-hook 'c-mode-common-hook   'hs-minor-mode)
+
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" yi-current-dir))
 (dolist (file (directory-files defuns-dir t "\\w+"))
@@ -242,7 +245,7 @@
     (load file)))
 
 (require 'setup-ace-jump-mode)
-(require 'setup-cedet)
+;; (require 'setup-cedet)
 (require 'setup-company-mode)
 (require 'setup-ess)
 (require 'setup-flycheck)

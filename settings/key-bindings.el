@@ -38,11 +38,18 @@
 (global-set-key (kbd "C-t") 'multi-term)
 
 ;; development
-(global-set-key (kbd "C-c c") 'zhangyi-default-compile)
-(global-set-key (kbd "C-c t") 'zhangyi-default-test)
-(global-set-key (kbd "C-c C-t d") 'zhangyi-default-test-dir)
-(global-set-key (kbd "C-c C-t p") 'zhangyi-default-test-project)
-(global-set-key (kbd "C-c o") 'zhangyi-open-header-file)
+(define-prefix-command 'dev-map)
+(global-set-key (kbd "C-c d") 'dev-map)
+(define-prefix-command 'dev-fold-map)
+(global-set-key (kbd "C-c d h") 'dev-fold-map)
+(global-set-key (kbd "C-c d h h") 'hs-toggle-hiding)
+(global-set-key (kbd "C-c d h a") 'hs-hide-all)
+(global-set-key (kbd "C-c d h s") 'hs-show-all)
+(global-set-key (kbd "C-c d b") 'zhangyi-default-compile)
+(global-set-key (kbd "C-c d t") 'zhangyi-default-test)
+;(global-set-key (kbd "C-c C-t d") 'zhangyi-default-test-dir)
+;(global-set-key (kbd "C-c C-t p") 'zhangyi-default-test-project)
+;(global-set-key (kbd "C-c o") 'zhangyi-open-header-file)
 (global-set-key (kbd "M-n") #'next-error)
 (global-set-key (kbd "M-p") (lambda() (interactive) (next-error -1)))
 
