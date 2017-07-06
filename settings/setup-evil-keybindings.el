@@ -41,7 +41,7 @@
   (unless (null doc)
     (which-key-add-key-based-replacements (concat "<SPC> " key) doc))
   (if (listp def)
-      (mapc (lambda (x) (apply #'yi/unfold-keybindings (concat key (pop x)) x))
+      (mapc (lambda (x) (apply #'yi/set-keybindings (concat key (pop x)) x))
             def)
     (evil-leader/set-key key def)))
 
