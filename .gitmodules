@@ -5,3 +5,9 @@
 [submodule "thirdparty/evil"]
 	path = thirdparty/evil
 	url = https://github.com/emacs-evil/evil
+[submodule "thirdparty/evil-escape"]
+	path = thirdparty/evil-escape
+	url = https://github.com/syl20bnr/evil-escape.git
+[submodule "thirdparty/evil-leader"]
+	path = thirdparty/evil-leader
+	url = https://github.com/cofi/evil-leader.git

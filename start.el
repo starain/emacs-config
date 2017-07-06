@@ -2,6 +2,8 @@
 ; $Id: start.el,v 0.01 2012/02/01 00:27:41 starain.zhang Exp $
 
 ;; Set up base dir
+(setq gc-cons-threshold 100000000)
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold 800000)))
 (setq yi-current-dir
       (file-name-directory (or load-file-name buffer-file-name)))
 
@@ -150,8 +152,9 @@
 (require 'setup-multiple-cursors)
 (require 'setup-orgmode)
 (require 'setup-swbuff)
-
-;; (require 'setup-evil)
+(require 'setup-which-key)
+(require 'setup-evil)
+(require 'setup-evil-keybindings)
 (require 'key-bindings)
 (require 'experimental)
 ;; Start with a nice clean environment:
