@@ -140,7 +140,8 @@
   (when (file-regular-p file)
     (load file)))
 
-(require 'setup-ace-jump-mode)
+(install-packages '(ace-window))
+
 ;; (require 'setup-cedet)
 (require 'setup-company-mode)
 (require 'setup-ess)
@@ -154,8 +155,8 @@
 (require 'setup-swbuff)
 (require 'setup-which-key)
 (require 'setup-evil)
-(require 'setup-evil-keybindings)
 (require 'key-bindings)
+(require 'setup-evil-keybindings)
 (require 'experimental)
 ;; Start with a nice clean environment:
 (garbage-collect)
