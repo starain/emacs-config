@@ -141,6 +141,7 @@
     (load file)))
 
 (install-packages '(ace-window))
+(install-packages '(neotree))
 
 ;; (require 'setup-cedet)
 (require 'setup-company-mode)
