@@ -143,6 +143,9 @@
 (install-packages '(ace-window))
 (install-packages '(neotree))
 
+(add-to-list 'load-path (concat yi-thirdparty-dir "emacs-w3m"))
+(require 'w3m)
+
 ;; (require 'setup-cedet)
 (require 'setup-company-mode)
 (require 'setup-ess)
