@@ -2,8 +2,10 @@
 (require 'setup-which-key)
 
 (setq yi-evil-leader "<SPC>")
+(setq yi-evil-leader-non-normal-prefix "C-c ")
+(setq evil-leader/in-all-states 1)
 
-(evil-leader/set-leader yi-evil-leader)
+(evil-leader/set-leader yi-evil-leader yi-evil-leader-non-normal-prefix)
 (setq-default evil-escape-key-sequence "jk")
 
 (setq yi-default-map
@@ -54,6 +56,8 @@
 (defun yi/set-keybindings (key def &optional doc)
   (unless (null doc)
     (which-key-add-key-based-replacements (concat "<SPC> " key) doc))
+  (unless (null doc)
+    (which-key-add-key-based-replacements (concat "C-c <SPC> " key) doc))
   (if (listp def)
       (mapc (lambda (x) (apply #'yi/set-keybindings (concat key (pop x)) x))
             def)
