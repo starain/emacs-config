@@ -8,6 +8,13 @@
 (evil-leader/set-leader yi-evil-leader yi-evil-leader-non-normal-prefix)
 (setq-default evil-escape-key-sequence "jk")
 
+(defun yi/w3m-dict-cn (word)
+  "Opens dict.cn to translate word to chinese."
+  (interactive
+   (list (read-string "Enter an English word: ")))
+  (w3m-goto-url-new-session
+   (concat "http://dict.cn/" word)))
+
 (setq yi-default-map
       '(("f" (("f" helm-find-files)
               ("p" helm-projectile-find-file)
@@ -27,7 +34,9 @@
          "Rings")
         ("s" (("b" helm-occur)
               ("p" helm-projectile-ag)
-              ("w" w3m-search-new-session))
+              ("w" w3m-search-new-session)
+              ("d" (("c" yi/w3m-dict-cn))
+               "Dictonary"))
          "Search")
         ("n" (("r" narrow-to-region)
               ("p" narrow-to-page)
