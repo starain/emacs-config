@@ -155,6 +155,7 @@
 (require 'setup-ess)
 (require 'setup-flycheck)
 (require 'setup-helm)
+(require 'setup-shackle)
 (require 'setup-yasnippet)
 (require 'setup-magit)
 (require 'setup-multi-term)
