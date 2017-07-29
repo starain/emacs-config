@@ -50,7 +50,7 @@
 (setq column-number-mode t)
 
 ;; Show line number
-(setq linum-format "%d ")
+(setq linum-format "%4d ")
 (global-linum-mode 1)
 
 ;; Tab as 4 space
@@ -106,6 +106,10 @@
 
 (install-packages '(zenburn-theme))
 (load-theme 'zenburn t)
+(custom-set-faces
+  '(hl-line ((t (:background "grey20")))) ;; highlight current line
+)
+(global-hl-line-mode t)
 
 (install-packages '(smooth-scrolling))
 (require 'smooth-scrolling)
