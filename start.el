@@ -156,6 +156,7 @@
 (require 'setup-flycheck)
 (require 'setup-helm)
 (require 'setup-shackle)
+(require 'setup-python)
 (require 'setup-yasnippet)
 (require 'setup-magit)
 (require 'setup-multi-term)
