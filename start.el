@@ -158,6 +158,7 @@
 (require 'setup-shackle)
 (require 'setup-python)
 (require 'setup-yasnippet)
+(require 'setup-auto-insert)
 (require 'setup-magit)
 (require 'setup-multi-term)
 (require 'setup-multiple-cursors)
