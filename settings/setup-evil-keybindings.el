@@ -15,12 +15,20 @@
   (w3m-goto-url-new-session
    (concat "http://dict.cn/" word)))
 
+(defun yi/w3m-goto-url (url)
+  "Opens url, auto append http prefix."
+  (interactive
+   (list (read-string "Enter a URL after http://: ")))
+  (w3m-goto-url-new-session
+   (concat "http://" url)))
+
 (setq yi-default-map
-      '(("f" (("f" helm-find-files)
-              ("p" helm-projectile-find-file)
+      '(("f" (("a" helm-find-files)
+              ("f" helm-projectile-find-file)
               ("s" save-buffer))
          "Files")
         ("b" (("h" helm-mini)
+              ("a" helm-mini)
               ("b" helm-projectile-switch-to-buffer)
               ("j" swbuff-switch-to-next-buffer)
               ("k" swbuff-switch-to-previous-buffer)
@@ -35,7 +43,8 @@
          "Rings")
         ("s" (("b" helm-occur)
               ("p" helm-projectile-ag)
-              ("w" w3m-search-new-session)
+              ("g" w3m-search-new-session)
+              ("w" yi/w3m-goto-url)
               ("d" (("c" yi/w3m-dict-cn))
                "Dictonary"))
          "Search")
