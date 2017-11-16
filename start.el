@@ -135,8 +135,8 @@
 ;; Remove text in active region if inserting text
 (delete-selection-mode 1)
 
-;; Code block folding
-(add-hook 'c-mode-common-hook   'hs-minor-mode)
+;; Folding
+(hs-minor-mode 1)
 
 ;; Functions (load all files in defuns-dir)
 (setq defuns-dir (expand-file-name "defuns" yi-current-dir))
