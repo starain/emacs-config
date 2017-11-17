@@ -15,6 +15,29 @@
 (require 'evil-escape)
 (evil-escape-mode)
 
+(add-to-list 'load-path (concat yi-thirdparty-dir "evil-textobj-anyblock"))
+(require 'evil-textobj-anyblock)
+(define-key evil-inner-text-objects-map "b" 'evil-textobj-anyblock-inner-block)
+(define-key evil-outer-text-objects-map "b" 'evil-textobj-anyblock-a-block)
+
+(add-to-list 'load-path (concat yi-thirdparty-dir "evil-args"))
+(require 'evil-args)
+(define-key evil-inner-text-objects-map "a" 'evil-inner-arg)
+(define-key evil-outer-text-objects-map "a" 'evil-outer-arg)
+
+(add-to-list 'load-path (concat yi-thirdparty-dir "evil-indent-plus"))
+(require 'evil-args)
+(define-key evil-inner-text-objects-map "i" 'evil-indent-plus-i-indent)
+(define-key evil-outer-text-objects-map "i" 'evil-indent-plus-a-indent)
+(define-key evil-inner-text-objects-map "I" 'evil-indent-plus-i-indent-up)
+(define-key evil-outer-text-objects-map "I" 'evil-indent-plus-a-indent-up)
+(define-key evil-inner-text-objects-map "J" 'evil-indent-plus-i-indent-up-down)
+(define-key evil-outer-text-objects-map "J" 'evil-indent-plus-a-indent-up-down)
+
+(add-to-list 'load-path (concat yi-thirdparty-dir "evil-surround"))
+(require 'evil-surround)
+(global-evil-surround-mode 1)
+
 (evil-mode 1)
 
 (provide 'setup-evil)

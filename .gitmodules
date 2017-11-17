@@ -11,3 +11,15 @@
 [submodule "thirdparty/evil-leader"]
 	path = thirdparty/evil-leader
 	url = https://github.com/cofi/evil-leader.git
+[submodule "thirdparty/evil-textobj-anyblock"]
+	path = thirdparty/evil-textobj-anyblock
+	url = https://github.com/noctuid/evil-textobj-anyblock.git
+[submodule "thirdparty/evil-args"]
+	path = thirdparty/evil-args
+	url = https://github.com/wcsmith/evil-args.git
+[submodule "thirdparty/evil-indent-plus"]
+	path = thirdparty/evil-indent-plus
+	url = https://github.com/TheBB/evil-indent-plus.git
+[submodule "thirdparty/evil-surround"]
+	path = thirdparty/evil-surround
+	url = https://github.com/emacs-evil/evil-surround.git
